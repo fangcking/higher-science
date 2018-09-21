@@ -1,0 +1,22 @@
+<view class="page">
+  <view class="page_hd">
+    <text class="page_title">手机归属地查询</text>
+  </view>
+  <view class="section">
+    <input name="phone" placeholder="请输入您的手机号码" bindinput="bindinput" />
+    <button type="primary" bindtap="phoneTap">查询</button>
+  </view>
+  <view class="pih_item">
+    <view class="pih_title">电话号码：{{shouji}}</view>
+    <view class="pih_title">所属省份：{{province}}</view>
+    <view class="pih_title">所属城市：{{city}}</view>
+    <view class="pih_title">区号    ：{{areacode}}</view>
+    <view class="pih_title">运营商：{{company}}</view>
+    <view class="pih_title">卡类型：{{cardtype}}</view>
+  </view>
+   <button type="primary" bindtap="send">发送短信</button>
+  <view class="pih_item" wx:if="{{errMsg != ''}}">
+    <view class="err-msg">{{errNum}} - {{errMsg}}</view>
+  </view>
+  <view bindtap ='login'>登录</view>
+</view>

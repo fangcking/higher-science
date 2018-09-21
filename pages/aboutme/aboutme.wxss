@@ -1,0 +1,6 @@
+/* pages/aboutme/aboutme.wxss */
+.page_title{
+display: block;
+width: 100%;
+text-align: center;
+}

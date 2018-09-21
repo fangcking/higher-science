@@ -1,0 +1,14 @@
+<view class='container'>
+<!-- <view class='main'>
+<view wx:for="{{allGoods}}" 
+class='goods'  id="item-{{item.id}}"
+bindtap="tapName"  
+>
+{{item.foodname}}
+</view>
+</view> -->
+<view>
+<status howshow ="moreline" statusItems ="{{allgoods}}" title ="电器类型：">点击添加新属性
+</status>
+</view>
+ </view>

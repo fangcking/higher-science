@@ -1,0 +1,24 @@
+<!--Components/homestatus/homestatus.wxml-->
+<view class='homestatus'>
+<text class='title'>{{title}}</text>
+<ul  class ="{{howshow =='oneline' ?'status-items':'status-itemscol'}}">
+<li wx:for="{{statusItems}}"
+class =" {{howshow ==='oneline' ?'status-item':'status-itemcol'}}                       {{current_item ===index +1 && allitem?'statusitemtap':''}}"
+style='{{item.bgimage}}no-repeat center 30%/40px auto;' 
+bindtap="addstatus" data-key='{{index}}'>
+{{item}}
+</li>
+<li  class=" status-item status-slot" bindtap ='setstatusslot' wx:if ="{{howshow =='oneline' ?true:false}}">
+<slot></slot>
+</li>
+</ul>
+<view class='setAll'> 
+<set dataname = "{{addhomestatus}}" 
+ placeholder ='设置情景状态例如：休闲'
+ getDataname ="{{addhomestatus}}"
+ oriData ="{{statusItems}}"
+ hidden ="{{needhide}}"
+ bindgetdataback ="setstatus">
+</set>
+</view>
+</view>

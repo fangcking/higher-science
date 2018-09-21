@@ -1,0 +1,12 @@
+{
+"navigationBarBackgroundColor": "#ffffff",
+"navigationBarTextStyle": "black",
+"navigationBarTitleText": "首页",
+"backgroundColor": "#eeeeee",
+"backgroundTextStyle": "light",
+"usingComponents": {
+"aside": "../../../Components/aside/aside",
+"set" : "../../../Components/setGoods/setGoods",
+"status":"../../../Components/homestatus/homestatus"
+}
+}
