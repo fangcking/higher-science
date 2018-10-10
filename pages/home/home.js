@@ -13,21 +13,77 @@ Page({
       '厨房',
     ],
     allstatus:[
-      '回家',
-      '离家',
-      '就餐',
-      '影音',
-      '起床',
-      '睡眠'
+      {
+        name: "回家",
+        id: 1,
+      },
+      {
+        name: "离家",
+        id: 2,
+      },
+      {
+        name: "就餐",
+        id: 3,
+      },
+      {
+        name: "影音",
+        id: 4,
+      },
+      {
+        name: "起床",
+        id: 5,
+      },
+      {
+        name: "睡眠",
+        id: 6,
+      },
     ],
-    allgoods: ['f','67',
-      '8',
-      '7',
-      '6',
-      '4',
-      '3',
-    '2',
-      '1',
+    allgoods: [
+      {
+        name: "灯具",
+        id: 1,
+        bgimage: "url('../../images/all.png')"
+      },
+      {
+        name: "空调",
+        id: 2,
+        bgimage: "url('../../images/all.png')"
+      },
+      {
+        name: "空气净化",
+        id: 3,
+        bgimage: "url('../../images/all.png')"
+      },
+      {
+        name: "窗帘",
+        id: 4,
+        bgimage: "url('../../images/all.png')"
+      },
+      {
+        name: "智能生态",
+        id: 5,
+        bgimage: "url('../../images/home.png')"
+      },
+      {
+        name: "密码锁",
+        id: 6,
+        bgimage: "url('../../images/all.png')"
+      },
+      {
+        name: "电磁炉",
+        id: 7,
+        bgimage: "url('../../images/all.png')"
+      },
+      {
+        name: "烟雾报警",
+        id: 8,
+        bgimage: "url('../../images/all.png')"
+      },
+      {
+        name: "其他",
+        id: 9,
+        bgimage: "url('../../images/all.png')"
+      }
     ],
     imgUrls: [
       'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',

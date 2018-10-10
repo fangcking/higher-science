@@ -1,28 +1,9 @@
-.container{
+.contain{
   position: fixed;
   bottom:10;
   left: 0;
   width:100%;
   height: 100%;
-  background:#454c63;
+  background:#c6dbfc;
   overflow:hidden;
-}
-.main{
- display: flex;
-  flex-direction: row;
-  flex-wrap:wrap;
-  width: 100%;
-  min-height: 100%;
-}
-.goods{
-  width:25%;
-  flex:1,0,auto;
-  margin:30rpx;
-  height:200rpx;
-  border-radius: 40rpx;
-  text-align: center;
-  line-height: 300rpx;
-}
-#item-5{
-  color:rgb(211, 167, 46);
 }

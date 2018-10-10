@@ -1,6 +1,48 @@
 /* pages/aboutme/aboutme.wxss */
-.page_title{
-display: block;
-width: 100%;
-text-align: center;
+.me-contain{
+ height: 400rpx;
+ background: rgb(201, 196, 196);
+ text-align: center;
+}
+.myicon {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+.mysetitems{
+  width: 100%;
+  background: rgb(243, 238, 238);
+}
+.myset{
+  width: 730rpx;
+  height: 120rpx;
+  margin: 10rpx;
+  padding-left: 30rpx;
+  line-height: 120rpx;
+  border-radius: 20rpx;
+  background: rgb(238, 219, 219);
+}
+.myseticon{
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: -4%
+}
+.logininput{
+  display: inline-block;
+  width: 367.5rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  transition: all 0.5s 0.5s;
+  margin:5rpx 5rpx;
+  margin-bottom:-10rpx;
+  background: rgb(226, 192, 192);
+  border-radius: 10rpx;
+  text-align: center
+}
+.pih_title{
+  display: block;
+  width: 740rpx;
+  margin: 5rpx auto;
+  background: rgb(226, 192, 192)
 }

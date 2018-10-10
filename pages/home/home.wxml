@@ -21,7 +21,3 @@
 <status  howshow ="oneline" statusItems ="{{allstatus}}" title ="情景模式：">点击添加新属性
 </status>
 </view>
-<view>
-<status howshow ="moreline" statusItems ="{{allgoods}}" title ="电器类型：">点击添加新属性
-</status>
-</view>

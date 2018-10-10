@@ -1,11 +1,10 @@
 {
   "pages":[
-    "pages/demo/demo",
+    "pages/index/index",
     "pages/home/home",
     "pages/all/all",
     "pages/aboutme/aboutme",
-    "pages/all/goodsmore/all",
-    "pages/set/setroom"
+    "pages/all/goodsmore/all"
   ],
   "window":{
     "backgroundTextStyle":"light",

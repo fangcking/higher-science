@@ -4,7 +4,7 @@ Component({
   properties: {
     statusItems:Array,
     title:String,
-    howshow :String
+    howshow:String,
   },
   data: {
     needhide:true,
