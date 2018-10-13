@@ -14,7 +14,7 @@ module.exports = Behavior({
     this.update()
   },
   methods: {
-    update:  function() {
+    update() {
       // 本地读取
       let that = this
       let getdata = that.properties.oriData;
@@ -32,7 +32,7 @@ module.exports = Behavior({
             title: 'sorry，暂未获取到您的信息'
           })
         },
-        complete: function () {
+        complete () {
           //  去重 
           getdata = [...new Set(getdata)]
           that.setData({

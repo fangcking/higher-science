@@ -100,7 +100,7 @@ Page({
     lightSwitch:'',
     adress: '../set/setroom'
   },
-  onLoad:function(){
+  onLoad(){
     let that = this;
     let inter = setInterval(function(){
       let b = (Math.round(Math.random() * 100)) > 50 ? 0 : 1;

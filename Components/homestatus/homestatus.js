@@ -14,7 +14,7 @@ Component({
 
   },
   methods: {
-    addstatus:function(e){
+    addstatus(e){
       // +1 防止判断位置0时无法判断
       let cuu = e.currentTarget.dataset.key +1
       let a =!this.data.allitem 
@@ -29,14 +29,14 @@ Component({
         console.log("打开成功")
       }
     },
-    setstatusslot:function(e){
+    setstatusslot(e){
       var a = !this.data.allitem
       this.setData({
         needhide:false,
        
       })
     },
-    setstatus: function (e){
+    setstatus(e){
       this.setData({
         statusItems : e.detail,
       })

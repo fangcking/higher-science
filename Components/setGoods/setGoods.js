@@ -21,7 +21,7 @@ Component({
   },
   methods: {
     // 按钮禁用
-    caniuse:function(e){
+    caniuse(e){
       if (e.detail.value.length >= 1){
        this.setData({
          disabled :'',
@@ -32,7 +32,7 @@ Component({
        })
      }
     },
-    formSubmit:function(e){
+    formSubmit(e){
       // 本地存储 name value
       let stdinvalue = e.detail.value.input
       let dataname = this.properties.dataname
@@ -88,7 +88,7 @@ Component({
         }) 
       }  
     },
-    back:function(){
+    back(){
     this.setData({
      hidden :true
     })

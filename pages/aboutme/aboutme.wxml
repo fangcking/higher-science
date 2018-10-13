@@ -16,10 +16,10 @@
    </view>
   </view> 
 </view>
-<view wx:if ="{{setlogin}}">
-    <input name="phone" placeholder="请输入您的手机号码" bindinput="bindinput" maxlength="11" class ="logininput" />
+<view wx:if ="{{setlogin}}" class ="login">
+    <input name="phone" placeholder="请输入您的手机号码" bindinput="phoneinput" maxlength="11" class ="logininput" />
     <button type="primary" bindtap="phonetap"  class ="logininput" disabled='{{passcode}}'>发送验证码</button>
-    <input name="phone" placeholder="验证码" class ="logininput pih_title"/>
+    <input name="phone" placeholder="验证码" class ="logininput pih_title" bindinput='codeinput'/>
     <button type="primary" bindtap="codetap"  class ="logininput pih_title" disabled='{{loginbt}}'>登录</button>
     <view class=" logininput pih_title">电话号码：{{phonenumber}} </view>
     <view class=" logininput pih_title">所属省份：{{province}}</view>
