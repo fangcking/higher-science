@@ -4,15 +4,15 @@ Page({
   data: {
     province: "",
      city: "",
-     phone:"",
-     phonenumber:"",
+     phonenumber:null,
      loginstatus :true,
      myicon :null,
      setlogin :false,
      passcode :true,
-     loginbt :true
+     loginbt :true,
+     passnumber :null
   },
-  onLoad: function(){
+  onLoad(){
     // 判断是否已经登录
     console.log(app.globalData.userInfo)
     if (app.globalData.userInfo){
@@ -27,7 +27,7 @@ Page({
      setlogin: true
    })
   },
-  bindinput: function (e) {
+  phoneinput(e) {
     let phone = e.detail.value;
     let a =/^\d{11}$/g.test(phone);
     console.log(a)
@@ -37,7 +37,7 @@ Page({
       })
       var self = this;
       // wx.request({
-      //   url: "https://way.jd.com/jisuapi/query4?shouji="+phone+"&appkey=f25608dc281d634baa558498a0d20cd5",
+      //   url: "https://way.jd.com/jisuapi/query4?shouji="+phonenumber+"&appkey=f25608dc281d634baa558498a0d20cd5",
       //   success: function (res) {
       //     let resa = res.data;
       //     let ress = resa.result.result;
@@ -62,27 +62,51 @@ Page({
       })
     }
   },
-  phonetap:function(){
-    let phone= this.data.phone;
+  phonetap(){
+    let phone= this.data.phonenumber;
     let a=[];
     for(let i=0;i<6;i++){
       let q = Math.floor((Math.random()) * 9);
       a[i]=q
     };
      let b=a.join('');
-    if(phone !=''&&phone!=null){
+    if(phonenumber !=''&&phonenumber!=null){
       wx.request({
-        // url: 'https://way.jd.com/BABO/sms?mobile=' + phone + '&msg=【巴卜技术】您的验证码是' + b +',若非本人操作请忽略&appkey=f25608dc281d634baa558498a0d20cd5',
+        // url: 'https://way.jd.com/BABO/sms?mobile=' + phonenumber + '&msg=【巴卜技术】您的验证码是' + b +',若非本人操作请忽略&appkey=f25608dc281d634baa558498a0d20cd5',
         success: function (res) {
           console.log(res)
         }
       })
     }  
   },
-  codetap:(res) =>{
-
+  codeinput(e){
+    let passnumber = e.detail.value;
+    this.setData({
+      passnumber:passnumber
+    })
+    let a = /^\d{6}$/g.test(passcode);
+    if (a) {
+      this.setData({
+        loginbt: false
+      })
+    }
   },
-  scan :() =>{
+  codetap(){
+   wx.request({
+     url: '',
+     data :"passnumber"+this.data.passnumber,
+     method :"POST",
+     success:res =>{
+       this.setData({
+        //  等接口文档 mmp
+         loginstatus:false,
+         phonenumber:res.phonenumber
+
+       })
+     }
+   })
+  },
+  scan(){
    wx.scanCode({
      success :(res) =>{
        console.log('aaaa')
@@ -92,13 +116,16 @@ Page({
      }
    })
   },
-  myorder:() =>{
+  myorder(){
 
   },
-  order:() =>{
+  order(){
 
   },
-  contact:() =>{
+  contact(){
+   
+  },
+  loginbt(){
 
   }
 })
