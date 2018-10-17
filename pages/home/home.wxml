@@ -18,7 +18,6 @@
 <aside itemto ='{{adress}}' itemname ='{{roomname}}'></aside>
 </view>
 <view class='status'>
-<status  howshow ="oneline" statusItems ="{{allstatus}}" title ="情景模式：">点
-击添加新属性
+<status  howshow ="oneline" statusItems ="{{allstatus}}" title ="情景模式：">Setting More
 </status>
 </view>

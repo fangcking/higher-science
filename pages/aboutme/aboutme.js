@@ -8,7 +8,7 @@ Page({
     passnumber: null,
     loginstatus: true,
     myicon: null,
-    setlogin: false,
+    loginform: false,
     avoidpasscode: true,
     avoidlogin: true,
     btcon: "发送验证码"
@@ -25,7 +25,7 @@ Page({
   },
   showloginform: function () {
     this.setData({
-      setlogin: true
+    loginform: true
     })
   },
   iscorrectphone(e) {

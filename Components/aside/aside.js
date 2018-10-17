@@ -21,7 +21,6 @@ Component({
   },
   methods: {
     toggle: function (e) {
-      console.log(e.detail)
       let opentype = !this.data.open
       this.setData({
         open: opentype

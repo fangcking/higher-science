@@ -16,7 +16,7 @@
    </view>
   </view>
 </view>
-<view wx:if ="{{setlogin}}" class ="login">
+<view wx:if ="{{loginform}}" class ="login">
     <input name="phone" placeholder="请输入您的手机号码" bindinput="phoneinput" maxlength="11" class ="logininput" />
     <button type="primary" bindtap="sendpassnumber"  class ="logininput" disabled='{{avoidpasscode}}'>{{btcon}}</button>
     <input name="phone" placeholder="验证码" class ="logininput pih_title" bindinput='codeinput' maxlength='6'/>

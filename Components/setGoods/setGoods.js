@@ -9,13 +9,9 @@ Component({
     placeholder: String,
     hidden: Boolean
   },
-
   data: {
-    //暂存数据数组
-    lists: [],
     input: '',
     disabled: 'disabled',
-    setvalue: {},
   },
   ready: function () {
   },
@@ -36,21 +32,33 @@ Component({
       // 本地存储 name value
       let stdinvalue = e.detail.value.input
       let dataname = this.properties.dataname
-      let localdata = this.data.localdata.data
-      if (localdata.indexOf(stdinvalue) != -1) {
+      let localdata = this.data.localdata.datavalue
+      let state =[]
+      for (let localdatavalue of localdata){
+        state.push(localdatavalue.name) 
+      }
+      if (state.indexOf(stdinvalue) != -1) {
         wx.showToast({
           title: '请勿重复',
           image: "/images/err.png"
         })
+        // 输入后无论结果如何， 情况输入框内容
         this.setData({
           input: '',
-          lists: localdata
         })
       } else {
-        localdata.push(stdinvalue)
+        let valueidlists = []
+        for( let value of localdata){
+          valueidlists.push(value.id)
+        }
+        let lastid = Math.max.apply(null,valueidlists) +1
+        let a ={
+          name :stdinvalue,
+          id : lastid
+        }
+        localdata.push(a)
         this.setData({
           input: '',
-          lists: localdata
         })
         let that = this
         // 本地存入的同时，向后台提交数据
