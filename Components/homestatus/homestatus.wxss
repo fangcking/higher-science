@@ -4,7 +4,7 @@
  }
  .title{
   font-weight: bold;
-  color: rgb(76, 77, 78)
+  color: rgb(118, 129, 141)
  }
 .status-items{
   width: 100%;
@@ -12,7 +12,7 @@
   display: flex;
   flex-direction: row;
   overflow: auto;
-  background: rgb(233, 95, 95);
+  background: rgb(117, 110, 110);
   text-align:center;
 }
 .status-item{
@@ -23,12 +23,12 @@
   height: 50px;
   line-height: 50px;
   background: rgb(230, 239, 250);
-  box-shadow: 5px 5px 5px rgb(46, 8, 116); 
+  box-shadow: 5px 5px 5px rgb(193, 166, 243);
 }
 .statusitemtap{
   color: red;
   background: rgb(190, 184, 247);
-  box-shadow: 7px 7px 7px rgb(201, 29, 29);
+  box-shadow: 7px 7px 7px rgb(250, 80, 80);
   /* animation: boxshadow 0.1s; */
 }
 /* @keyframes boxshadow{
@@ -61,10 +61,10 @@
   width:25%;
   margin:30rpx;
   height:200rpx;
-  line-height: 100rpx; 
+  line-height: 100rpx;
   border-radius: 40rpx;
   background: rgb(230, 239, 250);
-  box-shadow: 5px 5px 5px rgb(46, 8, 116); 
+  box-shadow: 5px 5px 5px rgb(46, 8, 116);
 }
 .bgimage{
   display: block;

@@ -13,11 +13,12 @@
 <button disabled='{{btstatus}}'>
 设置灯具状态{{lightStates[1-i]}}
 </button>
-<!-- datanme与getDataname必须相同，否则无法获取本地缓存 --> 
+<!-- datanme与getDataname必须相同，否则无法获取本地缓存 -->
 <view class = "nav">
 <aside itemto ='{{adress}}' itemname ='{{roomname}}'></aside>
 </view>
 <view class='status'>
-<status  howshow ="oneline" statusItems ="{{allstatus}}" title ="情景模式：">点击添加新属性
+<status  howshow ="oneline" statusItems ="{{allstatus}}" title ="情景模式：">点
+击添加新属性
 </status>
 </view>

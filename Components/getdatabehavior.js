@@ -8,32 +8,33 @@ module.exports = Behavior({
     oriData: Array
   },
   data: {
-   localdata :{}
+    localdata: {}
   },
-  ready: function(){
+  ready: function () {
     this.update()
   },
   methods: {
-    update:  function() {
+    update() {
       // 本地读取
       let that = this
       let getdata = that.properties.oriData;
       console.log(getdata)
       wx.getStorage({
         key: this.properties.getDataname,
-        success: function (res) {
+        success: res => {
           console.log('获取到本地有数据')
           // 内置数据加用户设置数据
-           getdata.push(...res.data);
+          getdata.push(...res.data);
         },
-        fail: function () {
+        fail: () => {
           console.log('本地mei有数据')
           wx.showToast({
-            title: 'sorry，暂未获取到您的信息'
+            title: 'sorry，暂未获取到您的信息',
+            image: '/images/err.png'
           })
         },
-        complete: function () {
-          //  去重 
+        complete: () => {
+          //  去重
           getdata = [...new Set(getdata)]
           that.setData({
             localdata: {
@@ -45,21 +46,23 @@ module.exports = Behavior({
           wx.request({
             url: 'http://localhost:8083/',
             data: that.properties.getDataname,
-            success: function (res) {
+            success: a => {
               // 再次触发事件传回后台数据
               // 对比前后台数据，若不符摒弃客户端数据
               // 设置后台传回数据为data
-              var res =JSON.parse(res)
-              if(res.datacode == 1){
-                if (res.data != that.properties.oriData){
-                  that.setData({ 
-                    oriData: res.data
-                    })
-                }
+              let res = JSON.parse(a)
+              // datacode 为0表示
+              if (res.data === 0) {
+                that.setData({
+                  localdata: {
+                    key: that.properties.getDataname,
+                    data: getdata
+                  },
+                })
               }
             },
             fail: function (res) {
-              console.log('无法获取服务器数据')
+              console.log('无法获取服务器数据,载入缓存')
             }
           })
         }

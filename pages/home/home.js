@@ -12,7 +12,7 @@ Page({
       '卧室',
       '厨房',
     ],
-    allstatus:[
+    allstatus: [
       {
         name: "回家",
         id: 1,
@@ -96,22 +96,22 @@ Page({
     autoplay: true,
     interval: 3000,
     duration: 1000,
-    lightStates:['开','关'],
-    lightSwitch:'',
+    lightStates: ['开', '关'],
+    lightSwitch: '',
     adress: '../set/setroom'
   },
-  onLoad:function(){
+  onLoad() {
     let that = this;
-    let inter = setInterval(function(){
+    let inter = setInterval(function () {
       let b = (Math.round(Math.random() * 100)) > 50 ? 0 : 1;
       // console.log(b)
       that.setData({
         i: b
       })
-    },100);
+    }, 100);
     setTimeout(function () {
       clearInterval(inter)
 
-    }, 50000)  
+    }, 50000)
   },
 })

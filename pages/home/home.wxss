@@ -1,3 +1,6 @@
+Page{
+  background:rgb(223, 221, 221);
+}
 .swiper-item{
   width: 100%;
 }
@@ -7,5 +10,6 @@ top:10%;
 left:-25%;
 width: 35%;
 height: 80%;
-z-index: 2
+z-index: 2;
 }
+

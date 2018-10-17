@@ -1,44 +1,61 @@
 // Components/homestatus/homestatus.js
 Component({
- 
+
   properties: {
-    statusItems:Array,
-    title:String,
-    howshow:String,
+    statusItems: Array,
+    title: String,
+    howshow: String,
   },
   data: {
-    needhide:true,
-    addhomestatus:'homestatus',
-    allitem:false,
+    needhide: true,
+    addhomestatus: 'homestatus',
+    selected: false,
     current_item: null,
 
   },
   methods: {
-    addstatus:function(e){
+    sethomestatus(e) {
       // +1 防止判断位置0时无法判断
-      let cuu = e.currentTarget.dataset.key +1
-      let a =!this.data.allitem 
-        this.setData({
-          current_item: cuu,
-          allitem: a
-        })
-      console.log(a)
-      console.log(this.data.current_item+'系统按得值是')
-      if(cuu && a){
+      let cuu = e.currentTarget.dataset.key + 1
+      let a = this.data.selected
+      this.setData({
+        current_item: cuu,
+        selected: true
+      })
+      console.log(this.data.current_item + '是按得值' + a + '判断结果')
+      if (cuu && a) {
         // 页面跳转加载跳转路由
         console.log("打开成功")
+
+        wx.request({
+          url: '',
+          method: 'POST',
+          success: res => {
+
+          },
+          fail: res => {
+            console.log('失败')
+            wx.showToast({
+              title: '设置失败',
+              image: '/images/err.png'
+
+            })
+            // this.setData({
+            //   selected :false
+            // })
+          }
+        })
       }
     },
-    setstatusslot:function(e){
-      var a = !this.data.allitem
+    addstatusslot(e) {
+      var a = !this.data.selected
       this.setData({
-        needhide:false,
-       
+        needhide: false,
       })
     },
-    setstatus: function (e){
+    setstatus(e) {
       this.setData({
-        statusItems : e.detail,
+        statusItems: e.detail,
       })
     }
   }

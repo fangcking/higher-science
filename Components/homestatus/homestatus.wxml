@@ -3,17 +3,17 @@
 <text class='title'>{{title}}</text>
 <ul  class ="{{howshow =='oneline' ?'status-items':'status-itemscol'}}">
 <li wx:for="{{statusItems}}"
-class =" {{howshow ==='oneline' ?'status-item':'status-itemcol'}}                       {{current_item ===index +1 && allitem?'statusitemtap':''}}"
-bindtap="addstatus" data-key='{{index}}'>
+class =" {{howshow ==='oneline' ?'status-item':'status-itemcol'}}                       {{current_item ===index +1 && selected?'statusitemtap':''}}"
+bindtap="sethomestatus" data-key='{{index}}'>
 <image src="{{item.bgimage}}" wx:if ="{{howshow ==='moreline'}}" class='bgimage'></image>
 {{item.name}}
 </li>
-<li  class=" status-item status-slot" bindtap ='setstatusslot' wx:if ="{{howshow =='oneline' ?true:false}}">
+<li  class=" status-item status-slot" bindtap ='addstatusslot' wx:if ="{{howshow =='oneline' ?true:false}}">
 <slot></slot>
 </li>
 </ul>
-<view class='setAll'> 
-<set dataname = "{{addhomestatus}}" 
+<view class='setAll'>
+<set dataname = "{{addhomestatus}}"
  placeholder ='设置情景状态例如：休闲'
  getDataname ="{{addhomestatus}}"
  oriData ="{{statusItems}}"

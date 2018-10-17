@@ -5,47 +5,48 @@ Component({
   behaviors: [getGoods],
   properties: {
     // 本地存储数据名字
-    dataname : String,
-    placeholder :String,
-    hidden :Boolean
+    dataname: String,
+    placeholder: String,
+    hidden: Boolean
   },
 
   data: {
     //暂存数据数组
-   lists:[],
-   input:'',
-   disabled:'disabled',
-   setvalue:{},
+    lists: [],
+    input: '',
+    disabled: 'disabled',
+    setvalue: {},
   },
   ready: function () {
   },
   methods: {
     // 按钮禁用
-    caniuse:function(e){
-      if (e.detail.value.length >= 1){
-       this.setData({
-         disabled :'',
-       })
-     }else{
-       this.setData({
-         disabled: 'disabled',
-       })
-     }
+    caniuse(e) {
+      if (e.detail.value.length >= 1) {
+        this.setData({
+          disabled: '',
+        })
+      } else {
+        this.setData({
+          disabled: 'disabled',
+        })
+      }
     },
-    formSubmit:function(e){
+    formSubmit(e) {
       // 本地存储 name value
       let stdinvalue = e.detail.value.input
       let dataname = this.properties.dataname
       let localdata = this.data.localdata.data
-      if (localdata.indexOf(stdinvalue) != -1){
+      if (localdata.indexOf(stdinvalue) != -1) {
         wx.showToast({
           title: '请勿重复',
+          image: "/images/err.png"
         })
-         this.setData({
+        this.setData({
           input: '',
           lists: localdata
         })
-      }else{
+      } else {
         localdata.push(stdinvalue)
         this.setData({
           input: '',
@@ -66,11 +67,12 @@ Component({
           },
           fail: function () {
             wx.showToast({
-              title: '本地保存失败'
+              title: '本地保存失败',
+              image: '/images/err.png'
             })
           },
           complete: function () {
-            // 为测试方便 在这里调用 
+            // 为测试方便 在这里调用
             that.update()
             wx.request({
               url: 'http://localhost:8083/',
@@ -85,15 +87,15 @@ Component({
               }
             })
           }
-        }) 
-      }  
+        })
+      }
     },
-    back:function(){
-    this.setData({
-     hidden :true
-    })
-    // 将隐藏的消息发出
-    this.triggerEvent('returnpre')
+    back() {
+      this.setData({
+        hidden: true
+      })
+      // 将隐藏的消息发出
+      this.triggerEvent('returnpre')
     }
   }
 })
