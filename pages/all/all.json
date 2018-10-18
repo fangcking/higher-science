@@ -1,7 +1,7 @@
 {
   "navigationBarTitleText": "产品分类",
   "usingComponents": {
-   "set": "../../../Components/setGoods/setGoods",
+   "set": "../../../Components/setting/setting",
   "status": "../../../Components/homestatus/homestatus"
   }
 }

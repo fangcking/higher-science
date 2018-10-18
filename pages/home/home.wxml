@@ -18,6 +18,6 @@
 <aside itemto ='{{adress}}' itemname ='{{roomname}}'></aside>
 </view>
 <view class='status'>
-<status  howshow ="oneline" statusItems ="{{allstatus}}" title ="情景模式：">Setting More
+<status  howshow ="oneline" statusItems ="{{allstatus}}" storgename ="homestatus">Setting More
 </status>
 </view>

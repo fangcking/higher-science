@@ -159,7 +159,9 @@ Page({
 
   },
   order() {
-
+    wx.navigateTo({
+      url: './order/order',
+    })
   },
   contact() {
 

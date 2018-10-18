@@ -9,4 +9,9 @@ Page{
   height: 100%;
   overflow:hidden;
 }
+.goods{
+  position: absolute;
+  top :50%;
+  transform: translateY(-50%)
+}
 

@@ -13,9 +13,9 @@ bindtap="sethomestatus" data-key='{{index}}'>
 </li>
 </ul>
 <view class='setAll'>
-<set dataname = "{{addhomestatus}}"
+<set dataname = "{{storgename}}"
  placeholder ='设置情景状态例如：休闲'
- getDataname ="{{addhomestatus}}"
+ getDataname ="{{storgename}}"
  oriData ="{{statusItems}}"
  hidden ="{{needhide}}"
  bindgetdataback ="setstatus">

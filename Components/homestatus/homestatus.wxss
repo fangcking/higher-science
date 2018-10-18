@@ -1,6 +1,7 @@
 /* Components/homestatus/homestatus.wxss */
 .homestatus{
   width: 100%;
+  text-align: center;
  }
  .title{
   font-weight: bold;
@@ -13,7 +14,6 @@
   flex-direction: row;
   overflow: auto;
   background: rgb(117, 110, 110);
-  text-align:center;
 }
 .status-item{
   flex: 1 0 auto;
@@ -54,7 +54,6 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  text-align:center;
 }
 .status-itemcol{
   flex:0 1 auto;

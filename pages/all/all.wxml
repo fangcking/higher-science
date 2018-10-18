@@ -1,4 +1,4 @@
 <view class='contain'>
- <status howshow ="moreline" statusItems ="{{allGoods}}" title ="电器类型："    bindtap="taphomeGoods">点击添加新属性
+ <status howshow ="moreline" statusItems ="{{allGoods}}" storgename ="goodsname"  bindtap="taphomeGoods" class ="goods">点击添加新属性
 </status>
  </view>

@@ -5,10 +5,10 @@ Component({
     statusItems: Array,
     title: String,
     howshow: String,
+    storgename :String
   },
   data: {
     needhide: true,
-    addhomestatus: 'homestatus',
     selected: false,
     current_item: null,
 
@@ -54,6 +54,7 @@ Component({
       })
     },
     setstatus(e) {
+
       this.setData({
         statusItems: e.detail,
       })

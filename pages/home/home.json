@@ -6,7 +6,7 @@
 "backgroundTextStyle": "light",
 "usingComponents": {
 "aside": "../../../Components/aside/aside",
-"set" : "../../../Components/setGoods/setGoods",
+"set" : "../../../Components/setting/setting",
 "status":"../../../Components/homestatus/homestatus"
 }
 }

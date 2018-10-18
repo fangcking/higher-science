@@ -49,53 +49,6 @@ Page({
         id: 6,
       },
     ],
-    allgoods: [
-      {
-        name: "灯具",
-        id: 1,
-        bgimage: "url('../../images/all.png')"
-      },
-      {
-        name: "空调",
-        id: 2,
-        bgimage: "url('../../images/all.png')"
-      },
-      {
-        name: "空气净化",
-        id: 3,
-        bgimage: "url('../../images/all.png')"
-      },
-      {
-        name: "窗帘",
-        id: 4,
-        bgimage: "url('../../images/all.png')"
-      },
-      {
-        name: "智能生态",
-        id: 5,
-        bgimage: "url('../../images/home.png')"
-      },
-      {
-        name: "密码锁",
-        id: 6,
-        bgimage: "url('../../images/all.png')"
-      },
-      {
-        name: "电磁炉",
-        id: 7,
-        bgimage: "url('../../images/all.png')"
-      },
-      {
-        name: "烟雾报警",
-        id: 8,
-        bgimage: "url('../../images/all.png')"
-      },
-      {
-        name: "其他",
-        id: 9,
-        bgimage: "url('../../images/all.png')"
-      }
-    ],
     imgUrls: [
       'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
       'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',

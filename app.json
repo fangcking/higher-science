@@ -1,39 +1,40 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/home/home",
     "pages/all/all",
     "pages/aboutme/aboutme",
-    "pages/all/goodsmore/all"
+    "pages/all/goodsmore/all",
+    "pages/aboutme/order/order"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "red",
     "navigationBarTitleText": "fangcking",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
-    "tabBar":{
-      "backgroundColor":"#751",
-      "color": "#fff",
-      "list":[
-        {
-          "pagePath": "pages/home/home",
-          "text": "首页",
-          "iconPath": "images/home.png",
-          "selectedIconPath": "images/open.png"
-        },
-        {
-          "pagePath": "pages/all/all",
-          "text": "分类",
-          "iconPath": "images/all.png",
-          "selectedIconPath": "images/open.png"
-          },
-          {
-            "pagePath":"pages/aboutme/aboutme",
-            "text": "关于我",
-            "iconPath": "images/account.png",
-            "selectedIconPath": "images/open.png"
-          }
-      ]
+  "tabBar": {
+    "backgroundColor": "#751",
+    "color": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/open.png"
+      },
+      {
+        "pagePath": "pages/all/all",
+        "text": "分类",
+        "iconPath": "images/all.png",
+        "selectedIconPath": "images/open.png"
+      },
+      {
+        "pagePath": "pages/aboutme/aboutme",
+        "text": "关于我",
+        "iconPath": "images/account.png",
+        "selectedIconPath": "images/open.png"
+      }
+    ]
   }
 }

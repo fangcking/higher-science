@@ -1,0 +1,23 @@
+<view>
+<form  bindinput ="formSubmit" bindreset='formReset'>
+<view class='seltcted-all'>
+<text class='seltcted-title'>预约产品</text>
+<picker bindchange='changeGoods' range ="{{selectgoods}}"range-key='name' value='{{goodsindex}}' class='a'>
+您选择了：{{selectgoods[goodsindex].name}} 
+</picker>
+<view>
+<text class='seltcted-title'>姓名</text>
+</view>
+<view>
+<text class='seltcted-title'>手机号</text>
+</view>
+<view>
+<text class='seltcted-title'>安装地址</text>
+</view>
+<view  wx:for ="{{selectgoods[goodsindex].more.name}}">
+<text class='seltcted-title'>{{item}}</text>
+</view>
+
+</view>
+</form>
+</view>
