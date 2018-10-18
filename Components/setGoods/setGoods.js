@@ -65,7 +65,7 @@ Component({
         wx.setStorage({
           key: dataname,
           data: localdata,
-          success: function () {
+          success: ()=> {
             wx.showToast({
               title: '本地保存成功'
             }),
@@ -73,24 +73,24 @@ Component({
                 disabled: "disabled"
               })
           },
-          fail: function () {
+          fail:() =>{
             wx.showToast({
               title: '本地保存失败',
               image: '/images/err.png'
             })
           },
-          complete: function () {
+          complete: ()=> {
             // 为测试方便 在这里调用
             that.update()
             wx.request({
               url: 'http://localhost:8083/',
               data: '',
-              success: function (res) {
+              success: res => {
                 // 触发get组件 更新数据 对比本地存储 修改本地数据
                 that.update()
 
               },
-              fail: function (res) {
+              fail: res=> {
                 console.log('保存到服务器失败')
               }
             })

@@ -17,8 +17,8 @@ module.exports = Behavior({
     update() {
       // 本地读取
       let that = this
-      let getdata = that.properties.oriData;
-      console.log(getdata)
+      let getdata =[]
+      // getdata为数组
       wx.getStorage({
         key: this.properties.getDataname,
         success: res =>{
@@ -27,15 +27,15 @@ module.exports = Behavior({
            getdata.push(...res.data);
         },
         fail:()=> {
+           getdata = that.properties.oriData;
           console.log('本地mei有数据')
           wx.showToast({
-            title: 'sorry，暂未获取到您的信息',
+            title: '获取数据失败',
             image :'/images/err.png'
           })
         },
         complete:()=> {
-          //  去重
-          getdata = [...new Set(getdata)]
+          console.log(getdata)
           that.setData({
             localdata: {
               key: that.properties.getDataname,
