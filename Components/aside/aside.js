@@ -20,14 +20,15 @@ Component({
     roomslocalname: 'setroom',
   },
   methods: {
-    toggle: function (e) {
+    toggle (e) {
+      console.log(e.detail)
       let opentype = !this.data.open
       this.setData({
         open: opentype
       })
     },
     // 左划打开侧栏,
-    slide: function (e) {
+    slide(e) {
       console.log(this.data.lastpageX + '初始值')
       var pageX = parseInt(e.touches[0].pageX);
       var pageY = parseInt(e.touches[0].pageY);
@@ -56,22 +57,22 @@ Component({
         }
       }
     },
-    tosetroom: function () {
+    tosetroom () {
       wx.navigateTo({
         url: this.properties.itemto,
       })
     },
-    tapsetnav: function () {
+    tapsetnav () {
       this.setData({
         setnavstatus: false
       })
     },
-    setrooms:function(e){
+    setrooms(e){
       this.setData({
        itemname:e.detail
       })
     },
-     showset:function(){
+     showset(){
        this.setData({
          setnavstatus : true
        })

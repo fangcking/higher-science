@@ -28,7 +28,7 @@ Component({
         })
       }
     },
-    formSubmit(e) {
+    formSubmit(e){
       // 本地存储 name value
       let stdinvalue = e.detail.value.input
       let dataname = this.properties.dataname
