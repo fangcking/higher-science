@@ -2,7 +2,7 @@
 Page{
   background:rgb(248, 231, 231);
 }
-.me-contain{
+.con-aboutme{
  height: 400rpx;
  background: rgb(201, 196, 196);
  text-align: center;

@@ -1,7 +1,7 @@
 Page{
   background:rgb(223, 221, 221);
 }
-.contain{
+.con-all{
   position: fixed;
   bottom:10;
   left: 0;

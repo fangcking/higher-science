@@ -1,4 +1,4 @@
-<view  class='me-contain'>
+<view  class='con-aboutme'>
 <!-- 未登录 -->
  <view bindtap ="showloginform" wx:if ="{{loginstatus}}">
   <image  src='/images/account.png' class='myicon'></image>

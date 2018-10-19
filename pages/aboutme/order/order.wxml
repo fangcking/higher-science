@@ -1,23 +1,42 @@
-<view>
-<form  bindinput ="formSubmit" bindreset='formReset'>
+<view class='con-order'>
+<form  bindsubmit ="formSubmit" bindreset='formReset'>
 <view class='seltcted-all'>
-<text class='seltcted-title'>预约产品</text>
-<picker bindchange='changeGoods' range ="{{selectgoods}}"range-key='name' value='{{goodsindex}}' class='a'>
-您选择了：{{selectgoods[goodsindex].name}} 
-</picker>
-<view>
-<text class='seltcted-title'>姓名</text>
-</view>
-<view>
-<text class='seltcted-title'>手机号</text>
-</view>
-<view>
-<text class='seltcted-title'>安装地址</text>
-</view>
-<view  wx:for ="{{selectgoods[goodsindex].more.name}}">
-<text class='seltcted-title'>{{item}}</text>
-</view>
-
+  <view class='seltcted-item'>
+   <text class='seltcted-title important'>预约产品</text>
+   <picker name ="product" bindchange='changeGoods' range ="{{selectgoods}}"range-key='name' value='{{goodsindex}}' class='seltcted-content'>
+选择：{{selectgoods[goodsindex].name}} 
+  </picker>
+  </view>
+  <view class='seltcted-item'>
+     <text class='seltcted-title important'>姓名</text>
+     <input type='text' name ="username" minlength ="1"  maxlength ="5" class='seltcted-content'></input>
+  </view>
+  <view class='seltcted-item'>
+    <text class='seltcted-title  important'>手机号</text>
+    <input type='number' name ="userphone" maxlength ="11" class='seltcted-content'></input>
+  </view>
+  <view class='seltcted-item'>
+     <text class='seltcted-title important'>安装地址</text>
+     <picker mode= "region" value='region' bindchange='regionChange' custom-item ="请选择" class='seltcted-content' name ="useradress">
+     {{region[0]}}-{{region[1]}}-{{region[2]}}
+     </picker>
+  </view>
+  <view class='seltcted-item'>
+    <text class='seltcted-title important'>详细地址</text>
+    <input type='number' name ="moreadress"class='seltcted-content'></input>
+  </view>
+  <view  wx:for ="{{selectgoods[goodsindex].more.name}}" class='seltcted-item'>
+     <text class='seltcted-title'>{{item}}</text>
+     <input class='seltcted-content' name ="mess-{{index}}"></input>
+  </view>
+  <view>
+  </view>
+       <image src='{{selectgoods[goodsindex].more.image}}'></image>
+  <view>
+     <button form-type='submit' class='bt-order'>提交数据</button>
+     <button form-type='reset'class='bt-order'>重置</button>
+  </view>
+     
 </view>
 </form>
 </view>

@@ -41,13 +41,10 @@
 } */
 .status-slot{
   width: auto;
-  background: rgb(247, 247, 162);
+  background: rgb(247, 229, 179);
   color:red
 }
-
 /* 多行多列 */
-
-
 .status-itemscol{
   width: 100%;
   height: 100%;

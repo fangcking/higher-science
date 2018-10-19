@@ -3,3 +3,37 @@
   background: red;
   color: blue 
 }
+.con-order{
+}
+.seltcted-item{
+  display: flex;
+  height: 90rpx;
+  line-height: 90rpx;
+  margin: 5rpx 0rpx;
+}
+.seltcted-title{
+  width: 300rpx;
+  margin: 0 10rpx;
+  padding: 0 20rpx;
+  background: rgb(247, 208, 208);
+  border-radius: 5px;
+}
+.important{
+  color: rgb(252, 80, 80)
+}
+.seltcted-content{
+  width:400rpx;
+  height: 90rpx;
+  padding: 0 20rpx;
+  margin: 0 10rpx 0 0;
+  background: rgb(219, 213, 213);
+  border-radius: 5px;
+  font-size: 16px;
+}
+.bt-order{
+  width: 730rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  margin: 10rpx auto;
+  background: rgb(248, 215, 197)
+}
