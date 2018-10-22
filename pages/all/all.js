@@ -49,7 +49,7 @@ Page({
       }
     ]
   },
-  tapName(event) {
+  togoodsmore(event) {
     wx.navigateTo({
       url: '../all/goodsmore/all'
     })

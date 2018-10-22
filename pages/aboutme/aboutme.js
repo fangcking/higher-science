@@ -38,7 +38,6 @@ Page({
     let a = this.iscorrectphone(phone)
     let b = /^\d{6}$/g.test(this.data.passnumber)
     let allowlogin = a && b
-    console.log(allowlogin)
     if (a) {
       this.setData({
         avoidpasscode: false,

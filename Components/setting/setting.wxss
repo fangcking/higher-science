@@ -5,8 +5,10 @@ input{
   text-align: center
 }
 .backtext{
-  display: block;
+  width: 80%;
   margin: 0 auto;
   text-align: center;
   color: red;
+  height: 80rpx;
+  line-height: 80rpx;
 }

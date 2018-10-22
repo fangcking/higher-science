@@ -29,7 +29,9 @@
      <text class='seltcted-title'>{{item}}</text>
      <input class='seltcted-content' name ="mess-{{index}}"></input>
   </view>
-  <view>
+  <view class='seltcted-item'>
+     <text class='seltcted-title important'>数量</text>
+     <input type='text' name ="number" minlength ="1"  maxlength ="2" class='seltcted-content'></input>
   </view>
   <view  class ="img-order">
   <image src='{{selectgoods[goodsindex].more.image}}'></image>

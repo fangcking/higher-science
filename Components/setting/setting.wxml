@@ -4,6 +4,8 @@
 <form bindsubmit="formSubmit" bindreset="formReset" hidden="{{hidden}}">
 <input name='input' placeholder="{{placeholder}}" maxlength='5' confirm-type='send' value='{{input}}' bindinput='caniuse'></input>
 <button formType="submit" disabled='{{disabled}}'>保存设置</button>
-<text bindtap ="back" class='backtext'>*</text>
+<view bindtap ="back" class='backtext'>
+<text>*</text>
+</view>
 </form>
 </view>

@@ -5,28 +5,28 @@ Page({
       {
         name:'门锁',
         more: {
-          name: ["门厚度", "导向片长度", "导向片宽度", "导向片类型","数量"],
+          name: ["门厚度", "导向片长度", "导向片宽度", "导向片类型"],
           image :'/images/all.png'
         }
       },
       {
         name: '猫眼',
         more: {
-          name: ["猫眼门厚度", "导向片长度", "导向片宽度", "导向片类型", "数量"],
-          image: ''
+          name: ["猫眼门厚度", "导向片长度", "导向片宽度", "导向片类型"],
+          image: '/images/account.png'
         }
       },
       {
         name: '三相表',
         more: {
-          name: ["三相表门厚度", "导向片长度", "导向片宽度", "导向片类型", "数量"],
+          name: ["三相表门厚度", "导向片长度", "导向片宽度", "导向片类型"],
           image: '/images/open.png'
         }
       },
       {
         name: '整套安装方案',
         more: {
-          name: ["zhengtao门厚度", "导向片长度", "导向片宽度", "导向片类型", "数量"],
+          name: ["zhengtao门厚度", "导向片长度", "导向片宽度", "导向片类型"],
           image: ''
         }
       },
@@ -51,7 +51,7 @@ Page({
   formSubmit(res){
     let data =res.detail.value
     // 满足所有必要条件时post后台
-    if(this.iscorrectphone(data.userphone) && data.username && data.moreadress){
+    if(this.iscorrectphone(data.userphone) && data.username && data.moreadress && data.number){
       wx.request({
         url: 'http://localhost:8083',
         method: 'POST',
@@ -71,7 +71,6 @@ Page({
         image:'/images/err.png'
       })
     }
-    console.log(data)
   },
   formReset(res){
     console.log(res)
