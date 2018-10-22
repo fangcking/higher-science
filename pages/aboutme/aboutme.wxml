@@ -16,21 +16,25 @@
    </view>
   </view>
 </view>
+<form bindsubmit ="login">
 <view wx:if ="{{loginform}}" class ="login">
-    <input name="phone" placeholder="请输入您的手机号码" bindinput="phoneinput" maxlength="11" class ="logininput" />
-    <button type="primary" bindtap="sendpassnumber"  class ="logininput" disabled='{{avoidpasscode}}'>{{btcon}}</button>
-    <input name="phone" placeholder="验证码" class ="logininput pih_title" bindinput='codeinput' maxlength='6'/>
-    <button type="primary" bindtap="login"  class ="logininput pih_title" disabled='{{avoidlogin}}'>登录</button>
+    <input name="phonenumber" placeholder="请输入您的手机号码" bindinput="phoneinput" maxlength="11" class ="logininput" />
+    <button  bindtap="sendpassnumber"  class ="logininput bt-aboutme" disabled='{{avoidpasscode}}'>{{btcon}}</button>
+    <input name="passnumber" placeholder="验证码" class ="logininput pih_title" bindinput='codeinput' maxlength='6'/>
+    <button form-type='submit'  class ="logininput pih_title bt-aboutme" disabled='{{avoidlogin}}'>登录</button>
     <view class=" logininput pih_title">电话号码：{{phonenumber}} </view>
     <view class=" logininput pih_title">所属省份：{{province}}</view>
     <view class=" logininput pih_title">所属城市：{{city}}</view>
 </view>
+</form>
+
  <!-- all show -->
   <view class='mysetitems'>
     <view class='myset' bindtap="scan">
        <image src='/images/home.png' class='myseticon'></image>
        <text>扫一扫</text>
     </view>
+    <!-- 图片需要更换 -->
     <view class='myset' bindtap="myorder">
        <image src='/images/home.png' class='myseticon'></image>
       <text>我的订单</text>

@@ -164,9 +164,24 @@ Page({
     })
   },
   contact() {
-
+   wx.makePhoneCall({
+     phoneNumber: '0354-7264212',
+     fail:res =>{
+      wx.showToast({
+        title: '来嘛 ●^_^●',
+        image:'/images/cute.png'
+      })
+     }
+   })
   },
-  loginbt() {
-
+  login(res) {      
+   wx.request({
+     url: '',
+     method:'POST',
+     data:res.detail.value,
+     success:res=>{
+      //  登录成功，设置状态 
+     }
+   })
   }
 })

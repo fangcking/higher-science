@@ -1,8 +1,4 @@
 /* pages/aboutme/order/order.wxss */
-.a{
-  background: red;
-  color: blue 
-}
 .con-order{
 }
 .seltcted-item{
@@ -36,4 +32,15 @@
   line-height: 90rpx;
   margin: 10rpx auto;
   background: rgb(248, 215, 197)
+
+}
+.img-order{
+  width: 720rpx;
+  height: 300rpx;
+  margin: 0 auto;
+  overflow: auto;
+  background: red;
+  display: flex;
+  align-items: center;
+  justify-content: center
 }

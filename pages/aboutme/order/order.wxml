@@ -31,7 +31,9 @@
   </view>
   <view>
   </view>
-       <image src='{{selectgoods[goodsindex].more.image}}'></image>
+  <view  class ="img-order">
+  <image src='{{selectgoods[goodsindex].more.image}}'></image>
+  </view>
   <view>
      <button form-type='submit' class='bt-order'>提交数据</button>
      <button form-type='reset'class='bt-order'>重置</button>

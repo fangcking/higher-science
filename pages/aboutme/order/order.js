@@ -20,7 +20,7 @@ Page({
         name: '三相表',
         more: {
           name: ["三相表门厚度", "导向片长度", "导向片宽度", "导向片类型", "数量"],
-          image: ''
+          image: '/images/open.png'
         }
       },
       {
@@ -32,7 +32,7 @@ Page({
       },
     ],
     goodsindex : 2,
-    region:['山东省','青岛市','崂山区']
+    region:['请选择','请选择','请选择']
   },
   changeGoods(res){
   this.setData({

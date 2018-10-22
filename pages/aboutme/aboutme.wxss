@@ -27,9 +27,10 @@ Page{
   background: rgb(238, 219, 219);
 }
 .myseticon{
-  width: 40rpx;
-  height: 40rpx;
-  vertical-align: -4%
+  width: 50rpx;
+  height: 50rpx;
+  margin: 0 20rpx;
+  vertical-align: -5%;
 }
 .logininput{
   display: inline-block;
@@ -47,4 +48,7 @@ Page{
   width: 740rpx;
   margin: 5rpx auto;
   background: rgb(226, 192, 192)
+}
+.bt-aboutme{
+  background: rgb(248, 215, 197)
 }
