@@ -53,7 +53,7 @@ Page({
     // 满足所有必要条件时post后台
     if(this.iscorrectphone(data.userphone) && data.username && data.moreadress && data.number){
       wx.request({
-        url: 'http://localhost:8083',
+        url: app.globalData.requestUrl,
         method: 'POST',
         data: {
           "order-mess": data

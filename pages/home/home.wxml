@@ -15,9 +15,9 @@
 </button> -->
 <!-- datanme与getDataname必须相同，否则无法获取本地缓存 -->
 <view class = "nav">
-<aside itemto ='{{adress}}' itemname ='{{roomname}}'></aside>
+<aside itemto ='{{adress}}' oriData ='{{roomname}}'></aside>
 </view>
 <view class='status'>
-<status  howshow ="oneline" statusItems ="{{allstatus}}" storgename ="homestatus">Setting More
+<status  howshow ="oneline" oriData ="{{allstatus}}" storgename ="homestatus" needSetMore ="true">Setting More
 </status>
 </view>

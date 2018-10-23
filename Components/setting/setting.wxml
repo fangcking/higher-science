@@ -1,8 +1,14 @@
 <!--Components/setGoods/setGoods.wxml-->
 <view>
 <slot></slot>
-<form bindsubmit="formSubmit" bindreset="formReset" hidden="{{hidden}}">
-<input name='input' placeholder="{{placeholder}}" maxlength='5' confirm-type='send' value='{{input}}' bindinput='caniuse'></input>
+<form bindsubmit="Setting" bindreset="formReset" hidden="{{hidden}}">
+<picker name='maininput' bindchange='select'  range ="{{localdata.datavalue}}"range-key='name' value='{{settingindex}}'class ="seltctpicker">
+{{localdata.datavalue[settingindex].name}}
+</picker>
+<view wx:if ="{{needSetMore}}" wx:for="{{settingMoreMsg}}" wx:for-item ="item2" class='seltcted-item'>
+<text class='seltcted-title'>{{item2.name}}</text>
+<input  name="{{item2.name}}" value="{{item2.value}}" class='seltcted-content'></input>
+</view>
 <button formType="submit" disabled='{{disabled}}'>保存设置</button>
 <view bindtap ="back" class='backtext'>
 <text>*</text>

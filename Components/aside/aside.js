@@ -1,11 +1,9 @@
 // Components/aside/aside.js
+const app = getApp()
 Component({
-  /**
-   * 组件的属性列表
-   */
   properties: {
    itemto : String,
-   itemname : Array
+   oriData : Array
   //  roomname :String
   },
   data: {

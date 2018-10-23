@@ -1,11 +1,14 @@
 // Components/homestatus/homestatus.js
+const app = getApp()
 Component({
 
   properties: {
-    statusItems: Array,
+    oriData: Array,
     title: String,
     howshow: String,
-    storgename :String
+    storgename:String,
+    needSetMore:Boolean,
+    setMoreMsg:Array
   },
   data: {
     needhide: true,
@@ -38,7 +41,6 @@ Component({
             wx.showToast({
               title: '设置失败',
               image: '/images/err.png'
-
             })
             // this.setData({
             //   selected :false

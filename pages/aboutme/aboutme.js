@@ -84,7 +84,7 @@ Page({
     if (phonenumber != '' && phonenumber != null) {
       wx.request({
         // url: 'https://way.jd.com/BABO/sms?mobile=' + phonenumber + '&msg=【巴卜技术】您的验证码是' + b +',若非本人操作请忽略&appkey=f25608dc281d634baa558498a0d20cd5',
-        url: "http://192.168.13.214/ReadMeterJsonService.asmx/getMayPersonJson",
+        url: app.globalData.requestUrl,
         method: "POST",
         success: res => {
           let data = JSON.parse(res.data.d)

@@ -5,81 +5,138 @@ Page({
       {
         name: "展厅",
         id: 1,
-        more :{
-
-        }
+        more :[
+          {
+            name:"灯泡1",
+            value :"guan"
+          }
+        ]
       },
       {
         name: "厨房",
         id: 2,
-        more: {
-
-        }
+        more:[
+          {
+            name:"",
+          value:""
+          },
+        ]
       },
       {
         name: "卧室",
         id: 3,
-        more: {
-
-        }
+        more: [
+          {
+            name: "",
+            value: ""
+          },
+        ]
       },
       {
         name: "卫生间",
         id: 4,
-        more: {
-
-        }
+        more: [
+          {
+            name: "",
+            value: ""
+          },
+        ]
       },
       {
         name: "车库",
         id: 5,
-        more: {
-
-        }
+        more: [
+          {
+            name: "",
+            value: ""
+          },
+        ]
       },
     ],
     allstatus: [
       {
         name: "回家",
         id: 1,
-        more: {
-
-        }
+        more: [
+          {
+            name: "回家灯泡1",
+            value: "7"
+          },
+          {
+            name: "回家灯泡2",
+            value: "7"
+          },
+          {
+            name: "回家灯泡3",
+            value: "1"
+          },
+        ]
       },
       {
         name: "离家",
         id: 2,
-        more: {
-
-        }
+        more: [
+          {
+            name: "likai灯泡2",
+            value: "7"
+          },
+          {
+            name: "likai家灯泡2",
+            value: "8"
+          },
+        ]
       },
       {
         name: "就餐",
         id: 3,
-        more: {
-
-        }
+        more: [
+          {
+            name: "就餐灯泡2",
+            value: "1"
+          },
+          {
+            name: "就餐灯泡2",
+            value: "a"
+          },
+          {
+            name: "就餐灯泡2",
+            value: "c"
+          },
+        ]
       },
       {
         name: "影音",
         id: 4,
-        more: {
-
-        }
+        more: [
+          {
+            name: "影音灯泡2",
+            value: ""
+          },
+          {
+            name: "影音灯泡2",
+            value: ""
+          },
+        ]
       },
       {
         name: "起床",
         id: 5,
-        more: {
-
-        }
+        more: [
+          {
+            name: "",
+            value: ""
+          },
+        ]
       },
       {
         name: "睡眠",
         id: 6,
-        more: {
-
-        }
+        more: [
+          {
+            name: "",
+            value: ""
+          },
+        ]
       },
     ],
     imgUrls: [

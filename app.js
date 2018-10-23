@@ -29,6 +29,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    requestUrl: "http://192.168.13.214/ReadMeterJsonService.asmx/getMayPersonJson"
   }
 })

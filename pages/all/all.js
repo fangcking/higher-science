@@ -5,47 +5,101 @@ Page({
       {
         name: "灯具",
         id: 1,
-        bgimage: "/images/open.png"
+        bgimage: "/images/open.png",
+        more: [
+          {
+            name: "",
+            value: ""
+          },
+        ]
       },
       {
         name: "空调",
         id: 2,
-        bgimage: "/images/all.png"
+        bgimage: "/images/all.png",
+        more: [
+          {
+            name: "",
+            value: ""
+          },
+        ]
       },
       {
         name: "空气净化",
         id: 3,
-        bgimage: "/images/open.png"
+        bgimage: "/images/open.png",
+        more: [
+          {
+            name: "",
+            value: ""
+          },
+        ]
       },
       {
         name: "窗帘",
         id: 4,
-        bgimage: "/images/all.png"
+        bgimage: "/images/all.png",
+        more: [
+          {
+            name: "",
+            value: ""
+          },
+        ]
       },
       {
         name: "智能生态",
         id: 5,
-        bgimage: "/images/account.png"
+        bgimage: "/images/account.png",
+        more: [
+          {
+            name: "",
+            value: ""
+          },
+        ]
       },
       {
         name: "密码锁",
         id: 6,
-        bgimage: "/images/all.png"
+        bgimage: "/images/all.png",
+        more: [
+          {
+            name: "",
+            value: ""
+          },
+        ]
       },
       {
         name: "电磁炉",
         id: 7,
-        bgimage: "/images/open.png"
+        bgimage: "/images/open.png",
+        more: [
+          {
+            name: "",
+            value: ""
+          },
+        ]
       },
       {
         name: "烟雾报警",
         id: 8,
-        bgimage: "/images/all.png"
+        bgimage: "/images/all.png",
+        more: [
+          {
+            name: "",
+            value: ""
+          },
+        ]
       },
       {
         name: "其他",
         id: 9,
-        bgimage: "/images/open.png"
+        bgimage: "/images/open.png",
+        more: [
+          {
+            name: "",
+            value: ""
+          },
+        ]
       }
     ]
   },

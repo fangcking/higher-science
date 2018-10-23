@@ -7,10 +7,10 @@
 <text class='nav-name' bindtap ='tosetroom'>{{item.name}}</text>
 </view>
 <view class="nav {{open?'nav-open':''}}">
-<set dataname = "{{roomslocalname}}" 
+<set setDataName = "{{roomslocalname}}" 
  placeholder ='设置房间名字'
- getDataname ="{{roomslocalname}}"
- oriData ="{{itemname}}" 
+ getDataName ="{{roomslocalname}}"
+ oriData ="{{oriData}}" 
  hidden ="{{setnavstatus}}"
  bindreturnpre ="showset"
  bindgetdataback ="setrooms"

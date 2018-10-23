@@ -1,10 +1,11 @@
 // my-behavior.js
 // 从本地或者网络获取数据
+const app = getApp()
 module.exports = Behavior({
   behaviors: [],
   properties: {
     // 获取的本地数据存储名字
-    getDataname: String,
+    getDataName: String,
     oriData: Array
   },
   data: {
@@ -16,18 +17,17 @@ module.exports = Behavior({
   methods: {
     update() {
       // 本地读取
-      let that = this
       let getdata =[]
       // getdata为数组
       wx.getStorage({
-        key: this.properties.getDataname,
+        key: this.properties.getDataName,
         success: res =>{
           console.log('获取到本地有数据')
           // 内置数据加用户设置数据
            getdata.push(...res.data);
         },
         fail:()=> {
-           getdata = that.properties.oriData;
+           getdata = this.properties.oriData;
           console.log('本地mei有数据')
           wx.showToast({
             title: '获取数据失败',
@@ -35,27 +35,25 @@ module.exports = Behavior({
           })
         },
         complete:()=> {
-          console.log(getdata)
-          that.setData({
+          this.setData({
             localdata: {
-              key: that.properties.getDataname,
+              key: this.properties.getDataName,
               datavalue: getdata
             },
           })
-          that.triggerEvent('getdataback', getdata)
+          console.log(getdata)
+          this.triggerEvent('getdataback', getdata)
           wx.request({
-            url: 'http://localhost:8083/',
-            data: that.properties.getDataname,
-            success:a=> {
+            url: app.globalData.requestUrl,
+            success:res=> {
               // 再次触发事件传回后台数据
               // 对比前后台数据，若不符摒弃客户端数据
               // 设置后台传回数据为data
-              let res =JSON.parse(a)
               // datacode 为0表示
               if(res.data ===0){
-                that.setData({
+                this.setData({
                   localdata: {
-                    key: that.properties.getDataname,
+                    key: this.properties.getDataName,
                     datavalue: getdata
                   },
                 })
