@@ -30,6 +30,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    requestUrl: "http://192.168.13.214/ReadMeterJsonService.asmx/getMayPersonJson"
+    requestUrl:"http://localhost:8083/"
+    // requestUrl: "http://192.168.13.214/ReadMeterJsonService.asmx/getMayPersonJson"
   }
 })

@@ -41,11 +41,13 @@ module.exports = Behavior({
               datavalue: getdata
             },
           })
-          console.log(getdata)
           this.triggerEvent('getdataback', getdata)
           wx.request({
             url: app.globalData.requestUrl,
+            method:"POST",
+            data:getdata, 
             success:res=> {
+              console.log('get中')
               // 再次触发事件传回后台数据
               // 对比前后台数据，若不符摒弃客户端数据
               // 设置后台传回数据为data

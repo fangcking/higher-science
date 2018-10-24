@@ -18,6 +18,6 @@
 <aside itemto ='{{adress}}' oriData ='{{roomname}}'></aside>
 </view>
 <view class='status'>
-<status  howshow ="oneline" oriData ="{{allstatus}}" storgename ="homestatus" needSetMore ="true">Setting More
+<status  howshow ="oneline" oriData ="{{homestatus}}" storgename ="homestatus" needSetMore ="true">Setting More
 </status>
 </view>

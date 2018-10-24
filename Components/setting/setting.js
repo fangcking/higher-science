@@ -16,8 +16,8 @@ Component({
     settingindex:1,
     disabled:'disabled',
     settingMoreMsg:[{
-      name: "空调1",
-      value: "77777"
+      name: "选择模式",
+      value: "设置参数"
     }
     ]
   },
@@ -108,12 +108,14 @@ Component({
        },
        complete: () => {
          // 为测试方便 在这里调用
-         this.update()
+        //  this.update()
          wx.request({
            url: app.globalData.requestUrl,
+           method:"POST",
            data:localdata,
            success: res => {
              // 触发get组件 更新数据 
+             console.log("成功")
              this.update()
            },
            fail: res => {

@@ -53,7 +53,7 @@ Page({
         ]
       },
     ],
-    allstatus: [
+    homestatus: [
       {
         name: "回家",
         id: 1,
@@ -133,8 +133,8 @@ Page({
         id: 6,
         more: [
           {
-            name: "",
-            value: ""
+            name: "1111",
+            value: "2222"
           },
         ]
       },
