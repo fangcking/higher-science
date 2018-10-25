@@ -37,7 +37,7 @@ Component({
     this.setData({
       settingindex: index,
       disabled: '',
-      selectvalue: ['暂不设置','开', '关'],
+      selectvalue: ['默认','开', '关'],
       pvindex: [0, 0],
       maininput: maininput,
       mainid :mainid
@@ -86,7 +86,7 @@ Component({
       name :morenamelist[index[0]],
       value: selectvalue[index[1]]
     }
-    if (moreMsg.value !== "暂不设置") {
+    if (moreMsg.value !=='默认') {
       if(more.length != 0){
         for (let item in more) {
           if (more[item].name === moreMsg.name) {

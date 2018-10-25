@@ -10,14 +10,14 @@
 <view wx:if ="{{needAddMore}}">
 <input name ="addmaininput" placeholder='设置新模式' class ="main-input"></input>
 </view>
-<picker-view indicator-style="height:30px" style ="width:100%;height:200px;" value ="{{pvindex}}" bindchange ="a"> 
+<picker-view indicator-style="height:50px"  style ="width:100%;height:200px;" value ="{{pvindex}}" bindchange ="a"> 
 <picker-view-column>
-<view wx:for="{{settingMoreMsg}}" style='line-height=30px'>
+<view wx:for="{{settingMoreMsg}}" style='line-height:50px'>
 {{item.name}}
 </view>
 </picker-view-column>
 <picker-view-column>
-<view wx:for="{{selectvalue}}" style='line-height=30px'>
+<view wx:for="{{selectvalue}}" style='line-height:50px'>
 {{item}}
 </view>
 </picker-view-column>
