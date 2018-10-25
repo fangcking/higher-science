@@ -8,30 +8,40 @@ Component({
     // 本地存储数据名字
     setDataName: String,
     hidden: Boolean,
-    needSetMore:Boolean,
+    // 测试需要  
+    // needSetMore:Boolean,
     SetMoreMsg:Array,
     placeholder:String
   },
   data: {
+    pvindex:[0,0],
+    selectvalue: [],
+    needSetMore:true,
     settingindex:1,
+    moreindex:0,
+    maininput:'',
+    mainid:null,
     disabled:'disabled',
-    settingMoreMsg:[{
-      name: "选择模式",
-      value: "设置参数"
-    }
-    ]
+    settingMoreMsg:[
+    ],
+    needAddMore:true
   },
   ready: function () {
   },
   methods: {
   select(e){
     let index = e.detail.value
-      this.setData({
-        settingindex:index,
-        disabled:'',
-      })
     let localdata = this.data.localdata.datavalue
     let maininput = localdata[index].name
+    let mainid = localdata[index].id
+    this.setData({
+      settingindex: index,
+      disabled: '',
+      selectvalue: ['暂不设置','开', '关'],
+      pvindex: [0, 0],
+      maininput: maininput,
+      mainid :mainid
+    })
     for (let value of localdata) {
       if (value.name === maininput) {
         this.setData({
@@ -39,61 +49,86 @@ Component({
         })
       } 
     }
+
+  },
+  a(res){
+    let selectvalue = this.data.selectvalue
+    let localdata = this.data.localdata.datavalue
+    let maininput = this.data.maininput
+    let mainid = this.data.mainid
+    let index = res.detail.value
+    // a [0,1]
+    let lastid
+    let state
+    let valueidlists = []
+    let morenamelist =[]
+    let more
+    // 设置id
+    for (let value of localdata) {
+      if (value.name === maininput) {
+        lastid = value.id
+        state = 0
+        // 完全复制localdata的more
+        more =value.more
+        for (let value2 of value.more){
+          morenamelist.push(value2.name)
+        }
+        break
+      }
+      else {
+        valueidlists.push(value.id)
+        lastid = Math.max.apply(null, valueidlists) + 1
+        state = 1
+      }
+    }
+  
+    let moreMsg ={
+      name :morenamelist[index[0]],
+      value: selectvalue[index[1]]
+    }
+    if (moreMsg.value !== "暂不设置") {
+      if(more.length != 0){
+        for (let item in more) {
+          if (more[item].name === moreMsg.name) {
+            more[item].value = moreMsg.value
+          }
+        }
+      }else{
+        more.push(moreMsg)
+      }
+      let a = {
+        name: maininput,
+        id: mainid,
+        more: more
+      }
+      if (state == 0) {
+        let item = lastid - 1
+        localdata.splice(item, 1, a)
+      } else {
+        localdata.push(a)
+      }
+      console.log(localdata)
+      this.setData({
+        localdata: {
+          key: this.properties.getDataName,
+          datavalue: localdata
+        },
+        more: more
+      })
+    }  
+  },
+  addselect(e){
+    let index =e.detail.value
+    console.log(index)
+    this.setData({
+      moreindex:index
+    })
   },
    Setting(e){
       // 本地存储 name value
-     let index = e.detail.value.maininput
-     let localdata = this.data.localdata.datavalue
-     let maininput = localdata[index].name
-     let AllMsg = e.detail.value
+     let addcon = e.detail.value.addmaininput
      let setDataName = this.properties.setDataName
-      //  localdata 格式为{
-      //   name :"",
-      //   id :"",
-      //   more:""
-      // }
-      let lastid
-      let state 
-      let valueidlists = []
-      for (let value of localdata){
-        console.log(maininput)
-        console.log(value.name)
-        if(value.name === maininput){
-        lastid =value.id
-        state = 0
-        break
-        } 
-        else{
-          valueidlists.push(value.id)
-          lastid = Math.max.apply(null, valueidlists) + 1
-          state = 1
-        }
-      }
-      console.log(state)
-     let moreMsg =[]
-     for(let value in AllMsg){
-       if(value !=="maininput"){
-          let l ={}
-          l.name =value
-          l.value =AllMsg[value]
-         moreMsg.push(l)
-       }
-     }
-     this.setData({
-       settingMoreMsg: moreMsg
-     })
-     let a = {
-       name: maininput,
-       id: lastid,
-       more: moreMsg
-     }
-     if(state == 0){
-       let item =lastid-1
-       localdata.splice(item,1,a)
-       console.log(localdata)
-     }else{
-       localdata.push(a)
-     }
+     let localdata =this.data.localdata
      // 本地存入的同时，向后台提交数据
      wx.setStorage({
        key: setDataName,

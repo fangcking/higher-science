@@ -9,7 +9,15 @@ Page({
           {
             name:"灯泡1",
             value :"guan"
-          }
+          },
+          {
+            name: "灯泡2",
+            value: "guan"
+          },
+          {
+            name: "灯泡3",
+            value: "guan"
+          },
         ]
       },
       {
@@ -81,7 +89,7 @@ Page({
             value: "7"
           },
           {
-            name: "likai家灯泡2",
+            name: "likai家灯泡3",
             value: "8"
           },
         ]
@@ -95,11 +103,11 @@ Page({
             value: "1"
           },
           {
-            name: "就餐灯泡2",
+            name: "就餐灯泡23",
             value: "a"
           },
           {
-            name: "就餐灯泡2",
+            name: "就餐灯泡25",
             value: "c"
           },
         ]
@@ -113,7 +121,7 @@ Page({
             value: ""
           },
           {
-            name: "影音灯泡2",
+            name: "影音灯泡23",
             value: ""
           },
         ]

@@ -32,9 +32,9 @@
   border-radius: 5px;
   font-size: 16px;
 }
-.seltctpicker{
+.main-input{
   height: 90rpx;
   line-height: 90rpx;
-  margin: 5rpx 0rpx;
+  /* margin: 5rpx 0rpx; */
   background: rgb(219, 213, 213);
 }

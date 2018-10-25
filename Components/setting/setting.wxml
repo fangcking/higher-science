@@ -2,13 +2,30 @@
 <view>
 <slot></slot>
 <form bindsubmit="Setting" bindreset="formReset" hidden="{{hidden}}">
-<picker name='maininput' bindchange='select'  range ="{{localdata.datavalue}}"range-key='name' value='{{settingindex}}'class ="seltctpicker">
+<view wx:if ="{{needSetMore}}" class ="main-input">
+<picker name='maininput' bindchange='select'  range ="{{localdata.datavalue}}"range-key='name' value='{{settingindex}}'>
 {{localdata.datavalue[settingindex].name}}
 </picker>
-<view wx:if ="{{needSetMore}}" wx:for="{{settingMoreMsg}}" wx:for-item ="item2" class='seltcted-item'>
-<text class='seltcted-title'>{{item2.name}}</text>
-<input  name="{{item2.name}}" value="{{item2.value}}" class='seltcted-content'></input>
 </view>
+<view wx:if ="{{needAddMore}}">
+<input name ="addmaininput" placeholder='设置新模式' class ="main-input"></input>
+</view>
+<picker-view indicator-style="height:30px" style ="width:100%;height:200px;" value ="{{pvindex}}" bindchange ="a"> 
+<picker-view-column>
+<view wx:for="{{settingMoreMsg}}" style='line-height=30px'>
+{{item.name}}
+</view>
+</picker-view-column>
+<picker-view-column>
+<view wx:for="{{selectvalue}}" style='line-height=30px'>
+{{item}}
+</view>
+</picker-view-column>
+</picker-view>
+<!-- <view wx:for="{{settingMoreMsg}}" class='seltcted-item'>
+<text class='seltcted-title'>{{item.name}}</text>
+<input  name="{{item.name}}" value="{{item.value}}" class='seltcted-content'></input>
+</view> -->
 <button formType="submit" disabled='{{disabled}}'>保存设置</button>
 <view bindtap ="back" class='backtext'>
 <text>*</text>
