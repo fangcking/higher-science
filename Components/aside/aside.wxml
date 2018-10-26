@@ -1,9 +1,9 @@
-<view class="page {{open?'icon-open':''}}" bindtouchmove ="slide">
-<view class='nav nav-title'> 
+<view class="page {{open?'icon-open':''}}">
+<view class='nav nav-title' bindtouchmove ="slide"> 
 <text>全部</text> 
 <image bindtap='toggle' src='../../images/nav.png' style="width: 80rpx; height: 80rpx; background-color: #eeeeee;float:right"></image>
 </view>
-<view wx:for ='{{itemname}}' class="nav {{open?'nav-open':''}}" hover-class='navhover'> 
+<view wx:for ='{{itemname}}' class="nav {{open?'nav-open':''}}" hover-class='navhover' bindtouchmove ="slide"> 
 <text class='nav-name' bindtap ='tosetroom'>{{item.name}}</text>
 </view>
 <view class="nav {{open?'nav-open':''}}">

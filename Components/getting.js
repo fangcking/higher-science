@@ -45,20 +45,16 @@ module.exports = Behavior({
           wx.request({
             url: app.globalData.requestUrl,
             method:"POST",
-            data:getdata, 
+            data:this.data.localdata, 
             success:res=> {
               console.log('get中')
               // 再次触发事件传回后台数据
               // 对比前后台数据，若不符摒弃客户端数据
               // 设置后台传回数据为data
               // datacode 为0表示
-              if(res.data ===0){
-                this.setData({
-                  localdata: {
-                    key: this.properties.getDataName,
-                    datavalue: getdata
-                  },
-                })
+              if(res.datacode ===0){
+                // 缓存数据过期或错误
+              
               }
             },
             fail: function (res) {
