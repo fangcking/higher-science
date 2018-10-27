@@ -52,13 +52,13 @@ module.exports = Behavior({
               // 对比前后台数据，若不符摒弃客户端数据
               // 设置后台传回数据为data
               // datacode 为0表示
-              if(res.datacode ===0){
-                // 缓存数据过期或错误
-                this.setData({
-                  localdata :res.data
-                })
+              // if(res.datacode ===0){
+              //   // 缓存数据过期或错误
+              //   this.setData({
+              //     localdata :res.data
+              //   })
               
-              }
+              // }
             },
             fail: function (res) {
               console.log('无法获取服务器数据,载入缓存')

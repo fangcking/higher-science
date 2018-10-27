@@ -150,32 +150,38 @@ Component({
     }  
   },
   delete(id){
-    let localdata = this.data.localdata.datavalue
+    let localdata = this.data.localdata
     console.log(localdata)
     wx.showActionSheet({
       itemList: ['确定删除该项'],
       success:res =>{
          if(res.tapIndex == 0){
-           localdata.splice(id, 1)
-           console.log(localdata)
+           localdata.datavalue.splice(id, 1)
+           for (let value of localdata.datavalue){
+             value.id--
+           }
            this.setData({
              localdata:localdata
            })
-           this.triggerEvent('getdataback', localdata)
+           this.Setting(0)
+           this.triggerEvent('getdataback', localdata.datavalue)
        }
       }
     })
   },
   addselect(e){
     let index =e.detail.value
-    console.log(index)
     this.setData({
       moreindex:index
     })
   },
    Setting(e){
       // 本地存储 name value
-     let addcon = e.detail.value.addmaininput
+      // 0表示第三方间接调用
+     let addcon
+     if (e != 0) {
+       addcon = e.detail.value.addmaininput
+     }
      let setDataName = this.properties.setDataName
      let localdata =this.data.localdata
      // 本地存入的同时，向后台提交数据
