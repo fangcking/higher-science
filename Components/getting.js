@@ -54,6 +54,9 @@ module.exports = Behavior({
               // datacode 为0表示
               if(res.datacode ===0){
                 // 缓存数据过期或错误
+                this.setData({
+                  localdata :res.data
+                })
               
               }
             },

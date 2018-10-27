@@ -4,7 +4,7 @@
 <ul  class ="{{howshow =='oneline' ?'status-items':'status-itemscol'}}">
 <li wx:for="{{statusItems}}"
 class =" {{howshow ==='oneline' ?'status-item':'status-itemcol'}}                       {{current_item ===index +1 && selected?'statusitemtap':''}}"
-bindtap="sethomestatus" data-key='{{index}}'>
+bindtap="sethomestatus" bindlongpress ="delete" data-key='{{index}}'>
 <image src="{{item.bgimage}}" wx:if ="{{howshow ==='moreline'}}" class='bgimage'></image>
 {{item.name}}
 </li>
@@ -13,7 +13,7 @@ bindtap="sethomestatus" data-key='{{index}}'>
 </li>
 </ul>
 <view class='setAll'>
-<set setDataName = "{{storgename}}"
+<set id ="setting" setDataName = "{{storgename}}"
  placeholder ='设置情景状态例如：休闲'
  getDataName ="{{storgename}}"
  oriData ="{{oriData}}"

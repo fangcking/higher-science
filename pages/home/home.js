@@ -67,17 +67,39 @@ Page({
         id: 1,
         more: [
           {
-            name: "回家灯泡1",
-            value: "7"
-          },
+            name :"展厅",
+            more:[
+              {
+                name: "回家灯泡1",
+                value: "7"
+              },
+              {
+                name: "回家灯泡2",
+                value: "7"
+              },
+              {
+                name: "回家灯泡3",
+                value: "1"
+              },
+            ]   
+          }, 
           {
-            name: "回家灯泡2",
-            value: "7"
-          },
-          {
-            name: "回家灯泡3",
-            value: "1"
-          },
+            name: "卧室",
+            more: [
+              {
+                name: "回家卧室灯泡1",
+                value: "7"
+              },
+              {
+                name: "回家灯泡2",
+                value: "7"
+              },
+              {
+                name: "回家灯泡3",
+                value: "1"
+              },
+            ]
+          },    
         ]
       },
       {
@@ -85,13 +107,35 @@ Page({
         id: 2,
         more: [
           {
-            name: "likai灯泡2",
-            value: "7"
+            name: "lijia展厅",
+            more: [
+              {
+                name: "lijia展厅灯泡1",
+                value: "7"
+              },
+              {
+                name: "展厅灯泡2",
+                value: "7"
+              },
+              {
+                name: "展厅灯泡3",
+                value: "1"
+              },
+            ]
           },
           {
-            name: "likai家灯泡3",
-            value: "8"
-          },
+            name:"lijia卧室",
+            more:[
+              {
+                name:"lijia卧室灯泡1",
+                value :"2"
+              },
+              {
+                name: "lijia卧室灯泡2",
+                value: "3"
+              },
+            ]
+          }
         ]
       },
       {
@@ -99,17 +143,30 @@ Page({
         id: 3,
         more: [
           {
-            name: "就餐灯泡2",
-            value: "1"
+            name: "展厅",
+            more: [
+              {
+                name: "展厅灯泡1",
+                value: "7"
+              },
+              {
+                name: "展厅灯泡2",
+                value: "7"
+              },
+              {
+                name: "展厅灯泡3",
+                value: "1"
+              },
+            ]
           },
           {
-            name: "就餐灯泡23",
-            value: "a"
-          },
-          {
-            name: "就餐灯泡25",
-            value: "c"
-          },
+            name: "卧室",
+            more: [
+              {
+                name: "卧室灯泡1"
+              }
+            ]
+          }
         ]
       },
       {
@@ -117,13 +174,30 @@ Page({
         id: 4,
         more: [
           {
-            name: "影音灯泡2",
-            value: ""
+            name: "展厅",
+            more: [
+              {
+                name: "展厅灯泡1",
+                value: "7"
+              },
+              {
+                name: "展厅灯泡2",
+                value: "7"
+              },
+              {
+                name: "展厅灯泡3",
+                value: "1"
+              },
+            ]
           },
           {
-            name: "影音灯泡23",
-            value: ""
-          },
+            name: "卧室",
+            more: [
+              {
+                name: "卧室灯泡1"
+              }
+            ]
+          }
         ]
       },
       {
@@ -131,9 +205,30 @@ Page({
         id: 5,
         more: [
           {
-            name: "",
-            value: ""
+            name: "展厅",
+            more: [
+              {
+                name: "展厅灯泡1",
+                value: "7"
+              },
+              {
+                name: "展厅灯泡2",
+                value: "7"
+              },
+              {
+                name: "展厅灯泡3",
+                value: "1"
+              },
+            ]
           },
+          {
+            name: "卧室",
+            more: [
+              {
+                name: "卧室灯泡1"
+              }
+            ]
+          }
         ]
       },
       {
@@ -141,9 +236,30 @@ Page({
         id: 6,
         more: [
           {
-            name: "1111",
-            value: "2222"
+            name: "展厅",
+            more: [
+              {
+                name: "展厅灯泡1",
+                value: "7"
+              },
+              {
+                name: "展厅灯泡2",
+                value: "7"
+              },
+              {
+                name: "展厅灯泡3",
+                value: "1"
+              },
+            ]
           },
+          {
+            name: "卧室",
+            more: [
+              {
+                name: "卧室灯泡1"
+              }
+            ]
+          }
         ]
       },
     ],

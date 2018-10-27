@@ -11,7 +11,7 @@ Component({
     // 测试需要  
     // needSetMore:Boolean,
     SetMoreMsg:Array,
-    placeholder:String
+    placeholder:String,
   },
   data: {
     pvindex:[0,0],
@@ -21,9 +21,11 @@ Component({
     moreindex:0,
     maininput:'',
     mainid:null,
-    disabled:'disabled',
+    addInput:'',
+    noPicker:false,
     settingMoreMsg:[
     ],
+    settingMoreMsg2:[],
     needAddMore:true
   },
   ready: function () {
@@ -36,7 +38,6 @@ Component({
     let mainid = localdata[index].id
     this.setData({
       settingindex: index,
-      disabled: '',
       selectvalue: ['默认','开', '关'],
       pvindex: [0, 0],
       maininput: maininput,
@@ -51,18 +52,33 @@ Component({
     }
 
   },
-  a(res){
+  // 增删改查crud四件套
+  create(res){
+    let allGoods =this.data.createData
+    let inputValue =res.detail.value
+    let localdata = this.data.localdata.datavalue
+    if (inputValue.length == 2){
+      this.setData({
+        needSetMore :false,
+        selectvalue: ['默认', '开', '关'],
+        maininput:inputValue,
+        settingMoreMsg:localdata[1].more
+      })
+    }
+  },
+  upDate(res){
     let selectvalue = this.data.selectvalue
     let localdata = this.data.localdata.datavalue
     let maininput = this.data.maininput
     let mainid = this.data.mainid
     let index = res.detail.value
-    // a [0,1]
+    // a [0,0,1]
     let lastid
     let state
     let valueidlists = []
-    let morenamelist =[]
+    // localdata的more
     let more
+
     // 设置id
     for (let value of localdata) {
       if (value.name === maininput) {
@@ -70,27 +86,43 @@ Component({
         state = 0
         // 完全复制localdata的more
         more =value.more
-        for (let value2 of value.more){
-          morenamelist.push(value2.name)
-        }
         break
       }
       else {
         valueidlists.push(value.id)
         lastid = Math.max.apply(null, valueidlists) + 1
+        more =localdata[1].more
         state = 1
       }
     }
-  
-    let moreMsg ={
-      name :morenamelist[index[0]],
-      value: selectvalue[index[1]]
+    if (more[index[0]].hasOwnProperty("more")){
+      this.setData({
+        settingMoreMsg2: more[index[0]].more
+      })
     }
-    if (moreMsg.value !=='默认') {
+    // 两个值
+    let moreMsg ={
+      name :more[index[0]].name,
+      value: selectvalue[index[2]]
+    }
+    // 三个值
+
+    if (moreMsg.value !=='默认' && moreMsg.name != "") {
       if(more.length != 0){
         for (let item in more) {
+          // 展厅
           if (more[item].name === moreMsg.name) {
-            more[item].value = moreMsg.value
+            // 两个值的可以直接用
+            if (more[item].hasOwnProperty("more")){
+              // 三个值更改
+              for(let a of more[item].more){
+                if (a.name === more[index[0]].more[index[1]].name){
+                  a.value = moreMsg.value
+                }
+              }
+            }else{
+              more[item].value = moreMsg.value
+            } 
           }
         }
       }else{
@@ -98,7 +130,7 @@ Component({
       }
       let a = {
         name: maininput,
-        id: mainid,
+        id: lastid,
         more: more
       }
       if (state == 0) {
@@ -116,6 +148,23 @@ Component({
         more: more
       })
     }  
+  },
+  delete(id){
+    let localdata = this.data.localdata.datavalue
+    console.log(localdata)
+    wx.showActionSheet({
+      itemList: ['确定删除该项'],
+      success:res =>{
+         if(res.tapIndex == 0){
+           localdata.splice(id, 1)
+           console.log(localdata)
+           this.setData({
+             localdata:localdata
+           })
+           this.triggerEvent('getdataback', localdata)
+       }
+      }
+    })
   },
   addselect(e){
     let index =e.detail.value
@@ -162,7 +211,9 @@ Component({
     },
     back() {
       this.setData({
-        hidden: true
+        hidden: true,
+        needSetMore:true,
+        addInput :''
       })
       // 将隐藏的消息发出
       this.triggerEvent('returnpre')

@@ -7,6 +7,6 @@
 "usingComponents": {
 "aside": "../../../Components/aside/aside",
 "set" : "../../../Components/setting/setting",
-"status":"../../../Components/homestatus/homestatus"
+"status":"../../../Components/showstatus/showstatus"
 }
 }
